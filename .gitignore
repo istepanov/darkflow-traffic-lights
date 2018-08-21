@@ -26,6 +26,7 @@ tfnet/yolo/*.parsed
 # Built cython files
 darkflow/cython_utils/*.pyd
 darkflow/cython_utils/*.c
+darkflow/cython_utils/*.so
 
 #egg-info
 darkflow.egg-info/
@@ -44,3 +45,8 @@ ckpt/*
 
 #pytest cache
 .cache/
+
+#training data
+data
+output
+
