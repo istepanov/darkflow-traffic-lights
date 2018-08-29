@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 import glob
 
 
-def _pp(l): # pretty printing 
+def _pp(l): # pretty printing
     for i in l: print('{}: {}'.format(i,l[i]))
 
 def pascal_voc_clean_xml(ANN, pick, exclusive = False):
@@ -19,11 +19,10 @@ def pascal_voc_clean_xml(ANN, pick, exclusive = False):
     cur_dir = os.getcwd()
     os.chdir(ANN)
     annotations = os.listdir('.')
-    annotations = glob.glob(str(annotations)+'*.xml')
     size = len(annotations)
 
     for i, file in enumerate(annotations):
-        # progress bar      
+        # progress bar
         sys.stdout.write('\r')
         percentage = 1. * (i+1) / size
         progress = int(percentage * 20)
@@ -31,8 +30,8 @@ def pascal_voc_clean_xml(ANN, pick, exclusive = False):
         bar_arg += [file]
         sys.stdout.write('[{}>{}]{:.0f}%  {}'.format(*bar_arg))
         sys.stdout.flush()
-        
-        # actual parsing 
+
+        # actual parsing
         in_file = open(file)
         tree=ET.parse(in_file)
         root = tree.getroot()
