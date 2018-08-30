@@ -7,6 +7,6 @@ python setup.py build_ext --inplace
 	--load -1 \
 	--train \
 	--trainer adam \
-	--dataset data/bosch_dataset \
-	--annotation data/bosch_dataset/annotations \
+	--dataset data/bosch/images \
+	--annotation data/bosch/annotations \
 	--gpu 1.0
